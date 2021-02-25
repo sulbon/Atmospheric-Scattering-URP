@@ -33,7 +33,7 @@ namespace UnityEngine.Experiemntal.Rendering.Universal
             int height = renderingData.cameraData.cameraTargetDescriptor.height;
 
             //TODO 需要Release RT 吗？
-            cmd.GetTemporaryRT(_lightShaftsLut.id, width, height, 0, FilterMode.Bilinear, RenderTextureFormat.R8);
+            cmd.GetTemporaryRT(_lightShaftsLut.id, width/4, height/4, 0, FilterMode.Bilinear, RenderTextureFormat.R8);
             cmd.Blit(_lightShaftsLut.id, _lightShaftsLut.id, material, 0);
 
             context.ExecuteCommandBuffer(cmd);
